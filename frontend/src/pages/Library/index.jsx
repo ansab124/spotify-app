@@ -13,7 +13,7 @@ const Library = () => {
 				<Link to="/collection/tracks">
 					<div className={styles.liked_songs}>
 						<h1>Liked Songs</h1>
-						<p>{user.likedSongs.length} Liked Songs</p>
+						<p>{user?.likedSongs.length} Liked Songs</p>
 					</div>
 				</Link>
 				<Playlist playlists={playlists} />

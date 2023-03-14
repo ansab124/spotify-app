@@ -15,9 +15,9 @@ const LikedSongs = () => {
 	const getLikedSongs = async () => {
 		try {
 			setIsFetching(true);
-			// const url = process.env.REACT_APP_API_URL + `/songs/like`;
-			const url = "https://weak-puce-kangaroo-cap.cyclic.app/api/songs/like"
-
+			const url = process.env.REACT_APP_API_URL + `/songs/like`;
+			// const url = "https://weak-puce-kangaroo-cap.cyclic.app/api/songs/like"
+			console.log("lll--", url);
 			const { data } = await axiosInstance.get(url);
 			setSongs(data.data);
 			setIsFetching(false);

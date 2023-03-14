@@ -17,8 +17,8 @@ const Search = () => {
 		setResults({});
 		try {
 			setIsFetching(true);
-			const url = `https://weak-puce-kangaroo-cap.cyclic.app/api/?search=${input.value}`
-			// const url = process.env.REACT_APP_API_URL + `/?search=${input.value}`;
+			// const url = `https://weak-puce-kangaroo-cap.cyclic.app/api/?search=${input.value}`
+			const url = process.env.REACT_APP_API_URL + `/?search=${input.value}`;
 			const { data } = await axiosInstance.get(url);
 			setResults(data);
 			setIsFetching(false);

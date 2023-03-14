@@ -2,11 +2,13 @@ import axiosInstance from "../axiosInstance";
 import { toast } from "react-toastify";
 import * as actions from "./index";
 
-const apiUrl = process.env.REACT_APP_API_URL + "/playlists";
+const apiUrl = "https://weak-puce-kangaroo-cap.cyclic.app/api/playlists";
 
 export const createPlayList = async (payload, dispatch) => {
 	dispatch(actions.createPlayListStart());
 	try {
+		console.log("likeddd---", apiUrl);
+
 		const { data } = await axiosInstance.post(apiUrl, payload);
 		dispatch(actions.createPlayListSuccess(data.data));
 		return true;
@@ -19,6 +21,7 @@ export const createPlayList = async (payload, dispatch) => {
 export const addSongToPlaylist = async (payload, dispatch) => {
 	dispatch(actions.addSongStart());
 	try {
+		console.log("jkjhyu---", apiUrl);
 		const { data } = await axiosInstance.put(apiUrl + "/add-song", payload);
 		dispatch(actions.addSongSuccess(data.data));
 		toast.success(data.message);

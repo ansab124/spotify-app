@@ -19,7 +19,7 @@ const Sidebar = () => {
 
 	const handleCreatePlayList = () => {
 		const data = {
-			name: "My Playlist #" + (playlists.length + 1),
+			name: "My Playlist #" + (playlists?.length + 1),
 			user: user._id,
 			desc: "By " + user.name,
 			songs: [],
