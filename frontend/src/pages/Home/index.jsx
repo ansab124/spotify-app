@@ -14,8 +14,8 @@ const Home = () => {
 
 			setIsFetching(true);
 			// const url = process.env.REACT_APP_API_URL + "/playlists/random";
-			const url = "https://weak-puce-kangaroo-cap.cyclic.app/api/playlists/random"
-			const songsUrl = "https://weak-puce-kangaroo-cap.cyclic.app/api/songs"
+			const url = "http://localhost:8080/api/playlists/random"
+			const songsUrl = "http://localhost:8080/api/songs"
 
 			const { data } = await axiosInstance.get(url);
 			const api = await axiosInstance.get(songsUrl);
