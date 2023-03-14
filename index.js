@@ -10,7 +10,6 @@ const playListRoutes = require("./routes/playLists");
 const searchRoutes = require("./routes/search");
 const path = require("path")
 const app = express();
-
 connection();
 app.use(cors());
 app.use(express.json());
