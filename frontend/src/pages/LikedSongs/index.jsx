@@ -15,7 +15,9 @@ const LikedSongs = () => {
 	const getLikedSongs = async () => {
 		try {
 			setIsFetching(true);
-			const url = process.env.REACT_APP_API_URL + `/songs/like`;
+			// const url = process.env.REACT_APP_API_URL + `/songs/like`;
+			const url = "https://weak-puce-kangaroo-cap.cyclic.app/api/songs/like"
+
 			const { data } = await axiosInstance.get(url);
 			setSongs(data.data);
 			setIsFetching(false);
@@ -59,7 +61,7 @@ const LikedSongs = () => {
 					</div>
 				) : (
 					<Fragment>
-						{songs.map((song) => (
+						{songs?.map((song) => (
 							<Fragment key={song._id}>
 								{user.likedSongs.indexOf(song._id) !== -1 && (
 									<Song song={song} />

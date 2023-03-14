@@ -17,7 +17,8 @@ const Search = () => {
 		setResults({});
 		try {
 			setIsFetching(true);
-			const url = process.env.REACT_APP_API_URL + `/?search=${input.value}`;
+			const url = `https://weak-puce-kangaroo-cap.cyclic.app/api/?search=${input.value}`
+			// const url = process.env.REACT_APP_API_URL + `/?search=${input.value}`;
 			const { data } = await axiosInstance.get(url);
 			setResults(data);
 			setIsFetching(false);
@@ -50,16 +51,16 @@ const Search = () => {
 			)}
 			{Object.keys(results).length !== 0 && (
 				<div className={styles.results_container}>
-					{results.songs.length !== 0 && (
+					{results?.songs?.length !== 0 && (
 						<div className={styles.songs_container}>
-							{results.songs.map((song) => (
+							{results?.songs?.map((song) => (
 								<Fragment key={song._id}>
 									<Song song={song} />
 								</Fragment>
 							))}
 						</div>
 					)}
-					{results.playlists.length !== 0 && (
+					{results?.playlists?.length !== 0 && (
 						<div className={styles.playlists_container}>
 							<Playlist playlists={results.playlists} />
 						</div>

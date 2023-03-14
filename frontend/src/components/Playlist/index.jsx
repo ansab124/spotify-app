@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 const Playlist = ({ playlists }) => {
 	return (
 		<Fragment>
-			{playlists.map((playlist) => (
+			{playlists?.map((playlist) => (
 				<Link key={playlist._id} to={`/playlist/${playlist._id}`}>
 					<div className={styles.playlist}>
 						{playlist.img === "" ? (

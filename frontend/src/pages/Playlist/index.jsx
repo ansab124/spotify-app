@@ -108,7 +108,7 @@ const Playlist = () => {
 								<AccessTimeIcon />
 							</div>
 						</div>
-						{songs.map((song) => (
+						{songs?.map((song) => (
 							<Fragment key={song._id}>
 								<Song
 									song={song}

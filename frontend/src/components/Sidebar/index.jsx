@@ -77,7 +77,7 @@ const Sidebar = () => {
 				</div>
 			) : (
 				<Fragment>
-					{playlists.map((playlist) => (
+					{playlists?.map((playlist) => (
 						<NavLink
 							key={playlist._id}
 							to={`/playlist/${playlist._id}`}
