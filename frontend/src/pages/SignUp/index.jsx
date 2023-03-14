@@ -65,7 +65,7 @@ const SignUp = () => {
 		if (Object.keys(errors).length === 0) {
 			try {
 				setIsFetching(true);
-				const url = "http://localhost:8080/api/users";
+				const url = "https://weak-puce-kangaroo-cap.cyclic.app/api/users";
 				await axios.post(url, data);
 				setIsFetching(false);
 				toast.success("Account created successfully");
